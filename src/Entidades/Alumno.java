@@ -7,13 +7,15 @@ public class Alumno {
     private int legajo;
     private String apellido;
     private String nombre;
+    private HashSet<Materia> materias;
     
-    HashSet materias = new HashSet();
+    
 
     public Alumno(int legajo, String apellido, String nombre) {
         this.legajo = legajo;
         this.apellido = apellido;
         this.nombre = nombre;
+        this.materias= new HashSet<>();
     }
 
   
