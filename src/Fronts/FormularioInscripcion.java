@@ -15,12 +15,12 @@ public class FormularioInscripcion extends javax.swing.JInternalFrame {
 
     public FormularioInscripcion() {
         initComponents();
-        Iterable<Alumno> alumnos;
-    
- 
-        for (Alumno alumno : alumnos) {
-            cbAlumno.addItem(alumno);  // Agregar cada Alumno al JComboBox
-        }
+//        Iterable<Alumno> alumnos;
+//    
+// 
+//        for (Alumno alumno : alumnos) {
+//            cbAlumno.addItem(alumno);  // Agregar cada Alumno al JComboBox
+//        }
             
             
         
