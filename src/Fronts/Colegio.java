@@ -68,6 +68,11 @@ public class Colegio extends javax.swing.JFrame {
         jMenu1.add(jMenuMaterias);
 
         jMenuInscripcion.setText("Inscripción");
+        jMenuInscripcion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuInscripcionActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuInscripcion);
 
         jMenuBar1.add(jMenu1);
@@ -106,6 +111,17 @@ public class Colegio extends javax.swing.JFrame {
         escritorio.add(fa);
         escritorio.moveToFront(fa);
     }//GEN-LAST:event_jMenuAlumnosActionPerformed
+
+    private void jMenuInscripcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuInscripcionActionPerformed
+        escritorio.removeAll();
+        escritorio.repaint();
+        FormularioInscripcion fo = new FormularioInscripcion();
+        fo.setVisible(true);
+        escritorio.add(fo);
+        escritorio.moveToFront(fo);
+     
+        
+    }//GEN-LAST:event_jMenuInscripcionActionPerformed
 
     /**
      * @param args the command line arguments
