@@ -8,6 +8,7 @@ import Entidades.Alumno;
 import Entidades.Materia;
 import java.util.ArrayList;
 import java.util.HashSet;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -15,7 +16,7 @@ import java.util.HashSet;
  */
 public class Colegio extends javax.swing.JFrame {
 
-     public static ArrayList<Alumno> alumnos  = new ArrayList<>();;
+     public static HashSet<Alumno> alumnos  = new HashSet<>();;
      public static HashSet<Materia> materias= new HashSet<>();;
 
 
@@ -33,7 +34,9 @@ public class Colegio extends javax.swing.JFrame {
     // Recordar que tenemos que importar 
     
     public static void agregarAlumno(Alumno alumno) {
-        alumnos.add(alumno);
+           
+            alumnos.add(alumno);
+     
     }
     
     // Mostrar la lista de alumnos que vamos ingresando

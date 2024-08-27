@@ -4,7 +4,9 @@
  */
 package Fronts;
 
+import Entidades.Alumno;
 import Entidades.Materia;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -34,26 +36,37 @@ public class FormularioMaterias extends javax.swing.JInternalFrame {
         jLabel3 = new javax.swing.JLabel();
         tbID = new javax.swing.JTextField();
         tbMateriaNombre = new javax.swing.JTextField();
-        tbAño = new javax.swing.JTextField();
+        tbAnio = new javax.swing.JTextField();
         jbGuardar = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
 
-        jlTitulo.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jlTitulo.setText("FORMULARIO DE MATERIAS");
+        jlTitulo.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jlTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jlTitulo.setText("Formulario de Materias");
 
-        jLabel1.setText("CODIGO DE MATERIA:");
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel1.setText("Código de Materia:");
 
-        jLabel2.setText("NOMBRE DE MATERIA:");
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel2.setText("Nombre:");
 
-        jLabel3.setText("AÑO AL QUE PERTENECE");
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel3.setText("Año al que pertence:");
 
+        tbID.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        tbID.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        tbMateriaNombre.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         tbMateriaNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tbMateriaNombreActionPerformed(evt);
             }
         });
 
+        tbAnio.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+
+        jbGuardar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jbGuardar.setText("Guardar");
         jbGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -61,6 +74,7 @@ public class FormularioMaterias extends javax.swing.JInternalFrame {
             }
         });
 
+        jButton2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jButton2.setText("Nuevo");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -68,6 +82,7 @@ public class FormularioMaterias extends javax.swing.JInternalFrame {
             }
         });
 
+        jButton3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jButton3.setText("Salir");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -78,56 +93,61 @@ public class FormularioMaterias extends javax.swing.JInternalFrame {
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(90, 90, 90)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap(16, Short.MAX_VALUE)
+                        .addComponent(jlTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 417, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(44, 44, 44)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(tbMateriaNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 221, Short.MAX_VALUE)
-                            .addComponent(tbAño)
-                            .addComponent(tbID))
-                        .addGap(59, 59, 59))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(16, 16, 16)
-                        .addComponent(jlTitulo)
-                        .addContainerGap(104, Short.MAX_VALUE))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jbGuardar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton3))
+                            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tbMateriaNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tbID, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tbAnio, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jbGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(23, 23, 23)
                 .addComponent(jlTitulo)
-                .addGap(33, 33, 33)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(tbID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(27, 27, 27)
+                    .addComponent(tbID, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(tbMateriaNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(34, 34, 34)
+                    .addComponent(tbMateriaNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(tbAño, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 126, Short.MAX_VALUE)
+                    .addComponent(tbAnio, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jbGuardar)
                     .addComponent(jButton2)
                     .addComponent(jButton3))
                 .addGap(14, 14, 14))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {tbAnio, tbID, tbMateriaNombre});
+
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jButton2, jButton3, jbGuardar});
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -141,13 +161,48 @@ public class FormularioMaterias extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jbGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbGuardarActionPerformed
+
         
         
-        int id= Integer.parseInt(tbID.getText());
-        int año= Integer.parseInt(tbAño.getText());
+        if (tbID.getText().isEmpty() || tbMateriaNombre.getText().isEmpty() || tbAnio.getText().isEmpty() ){
         
-        Materia mat= new Materia(id, tbMateriaNombre.getText().toUpperCase(), año);
-        Colegio.agregarMateria(mat);
+            JOptionPane.showMessageDialog(null, "Complete todos los datos de la Materia");
+        
+        }else{    //  Si los campos tienen datos, continuamos
+           
+            int respuesta = JOptionPane.showConfirmDialog(null,"¿Está Seguro?","Grabar", JOptionPane.YES_NO_OPTION);
+
+            if (respuesta == JOptionPane.YES_OPTION) {
+     
+                try {
+                    //el usuario confirmó grabar
+                    //controlar que los datos ingresados tienen el formato correcto
+                    //Convertirmos el txLegajo en INT, ya que es un String, debemos capturar las expeciones por si esta conversion falla.
+                    int id= Integer.parseInt(tbID.getText());
+                    int año= Integer.parseInt(tbAnio.getText());
+
+                     //generar la instancia de la clase Materia
+                    Materia mat= new Materia(id, tbMateriaNombre.getText().toUpperCase(), año);            
+                    //Agregamos el alumno al Hashset
+                     Colegio.agregarMateria(mat);
+                   JOptionPane.showMessageDialog(null, "Se ha guardado la materia...");
+                    dispose();
+                } catch (NumberFormatException e) {
+                    JOptionPane.showMessageDialog(null, "Ingrese los Datos Correctamente", "Error", JOptionPane.ERROR_MESSAGE);
+                    tbID.setText("");
+           
+                }
+                
+  
+
+            }
+        }
+        
+        
+
+        
+ 
+
         
         
         
@@ -156,7 +211,7 @@ public class FormularioMaterias extends javax.swing.JInternalFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         tbID.setText("");
         tbMateriaNombre.setText("");
-        tbAño.setText("");
+        tbAnio.setText("");
     }//GEN-LAST:event_jButton2ActionPerformed
 
     
@@ -169,7 +224,7 @@ public class FormularioMaterias extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JButton jbGuardar;
     private javax.swing.JLabel jlTitulo;
-    private javax.swing.JTextField tbAño;
+    private javax.swing.JTextField tbAnio;
     private javax.swing.JTextField tbID;
     private javax.swing.JTextField tbMateriaNombre;
     // End of variables declaration//GEN-END:variables
