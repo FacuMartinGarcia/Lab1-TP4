@@ -1,5 +1,6 @@
 package Entidades;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 
 public class Alumno {
@@ -8,14 +9,14 @@ public class Alumno {
     private String apellido;
     private String nombre;
     private HashSet<Materia> materias;
-    
-    
+
 
     public Alumno(int legajo, String apellido, String nombre) {
         this.legajo = legajo;
         this.apellido = apellido;
         this.nombre = nombre;
         this.materias= new HashSet<>();
+
     }
 
   
@@ -60,7 +61,7 @@ public class Alumno {
 
     @Override
     public String toString() {
-        return "Alumno{" + "legajo=" + legajo + ", apellido=" + apellido + ", nombre=" + nombre + ", materias=" + materias + '}';
+        return apellido + " " + nombre;
     }
     
     

@@ -1,28 +1,16 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
- */
 package Fronts;
 
 import Entidades.Alumno;
+import Fronts.Colegio;
+import static Fronts.Colegio.alumnos;
 
-/**
- *
- * @author Usuario
- */
 public class FormularioInscripcion extends javax.swing.JInternalFrame {
+
 
 
     public FormularioInscripcion() {
         initComponents();
-//        Iterable<Alumno> alumnos;
-//    
-// 
-//        for (Alumno alumno : alumnos) {
-//            cbAlumno.addItem(alumno);  // Agregar cada Alumno al JComboBox
-//        }
-            
-            
+        cargarComboAlumno();
         
         
     
@@ -81,11 +69,21 @@ public class FormularioInscripcion extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> cbAlumnos;
+    private javax.swing.JComboBox<Alumno> cbAlumnos;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
+
+private void cargarComboAlumno(){
+ 
+     for (Alumno alumno : alumnos) {
+        cbAlumnos.addItem(alumno);
+    }
+    
+}
+
 }
