@@ -5,7 +5,9 @@
 package Fronts;
 
 import Entidades.Alumno;
+import Entidades.Materia;
 import java.util.ArrayList;
+import java.util.HashSet;
 
 /**
  *
@@ -14,11 +16,15 @@ import java.util.ArrayList;
 public class Colegio extends javax.swing.JFrame {
 
      public static ArrayList<Alumno> alumnos  = new ArrayList<>();;
+     public static HashSet<Materia> materias= new HashSet<>();;
 
 
     public Colegio() {
         
         initComponents();
+        this.setLocationRelativeTo(null);
+        this.setTitle("Registro de Colegio");
+        
         
     
     }
@@ -36,6 +42,11 @@ public class Colegio extends javax.swing.JFrame {
             System.out.println("Alumno: "+ alumno.getApellido());
         }
         
+    }
+    
+    public static void agregarMateria(Materia materia){
+        
+        materias.add(materia);
     }
     
     @SuppressWarnings("unchecked")
@@ -58,11 +69,11 @@ public class Colegio extends javax.swing.JFrame {
         escritorio.setLayout(escritorioLayout);
         escritorioLayout.setHorizontalGroup(
             escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 513, Short.MAX_VALUE)
+            .addGap(0, 645, Short.MAX_VALUE)
         );
         escritorioLayout.setVerticalGroup(
             escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 378, Short.MAX_VALUE)
+            .addGap(0, 479, Short.MAX_VALUE)
         );
 
         jMenu1.setText("Menú Principal");
@@ -99,24 +110,25 @@ public class Colegio extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(escritorio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(escritorio, javax.swing.GroupLayout.Alignment.TRAILING)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(escritorio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(escritorio, javax.swing.GroupLayout.Alignment.TRAILING)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+   
+    //Aciones de los botones.
+    
     private void jMenuMateriasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuMateriasActionPerformed
-        // TODO add your handling code here:
+        escritorio.removeAll();
+        escritorio.repaint();
+        FormularioMaterias fma= new FormularioMaterias();
+        fma.setVisible(true);
+        escritorio.add(fma);
+        escritorio.moveToFront(fma);
     }//GEN-LAST:event_jMenuMateriasActionPerformed
 
     private void jMenuAlumnosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuAlumnosActionPerformed
