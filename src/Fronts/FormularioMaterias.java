@@ -196,8 +196,10 @@ public class FormularioMaterias extends javax.swing.JInternalFrame {
                     Materia mat= new Materia(id, tbMateriaNombre.getText().toUpperCase(), año);            
                     //Agregamos el alumno al Hashset
                      Colegio.agregarMateria(mat);
-                   JOptionPane.showMessageDialog(null, "Se ha guardado la materia...");
-                    dispose();
+                     
+                    JOptionPane.showMessageDialog(null, "Se ha guardado la materia...");
+                    blanquearCampos();
+                    
                 } catch (NumberFormatException e) {
                     JOptionPane.showMessageDialog(null, "Ingrese los Datos Correctamente", "Error", JOptionPane.ERROR_MESSAGE);
                     tbID.setText("");
@@ -208,21 +210,15 @@ public class FormularioMaterias extends javax.swing.JInternalFrame {
 
             }
         }
-        
-        
-
-        
- 
-
-        
-        
-        
+    
     }//GEN-LAST:event_jbGuardarActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void blanquearCampos(){
         tbID.setText("");
         tbMateriaNombre.setText("");
         tbAnio.setText("");
+    }
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        blanquearCampos();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     

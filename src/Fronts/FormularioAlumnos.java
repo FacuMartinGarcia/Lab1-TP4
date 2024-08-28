@@ -193,7 +193,7 @@ public class FormularioAlumnos extends javax.swing.JInternalFrame {
                     //Agregamos el alumno al ArrayList
                     Colegio.agregarAlumno(nuevo); 
                     JOptionPane.showMessageDialog(null, "Se ha guardado el alumno...");
-                    dispose();
+                    blanquearCampos();
                 } catch (NumberFormatException e) {
                     JOptionPane.showMessageDialog(null, "Ingrese los Datos Correctamente", "Error", JOptionPane.ERROR_MESSAGE);
                 }
@@ -210,11 +210,14 @@ public class FormularioAlumnos extends javax.swing.JInternalFrame {
         
     }//GEN-LAST:event_btSalirActionPerformed
 
-    private void btNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btNuevoActionPerformed
-        //Ponemos todos los campos en blanco
+    private void blanquearCampos(){
         tbLegajo.setText("");
         tbApellido.setText("");
         tbNombre.setText("");
+    }
+    private void btNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btNuevoActionPerformed
+        //Ponemos todos los campos en blanco
+        blanquearCampos();
     }//GEN-LAST:event_btNuevoActionPerformed
 
 
