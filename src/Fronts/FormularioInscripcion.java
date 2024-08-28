@@ -126,8 +126,9 @@ public class FormularioInscripcion extends javax.swing.JInternalFrame {
     private void jbInscribirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbInscribirActionPerformed
         // TODO add your handling code here:
         Alumno alumnoSeleccionado = (Alumno) cbAlumnos.getSelectedItem();
-        Materia materialSeleccionada = (Materia) cbMateria.getSelectedItem();
-        alumnoSeleccionado.agregarMateria(materialSeleccionada);
+        Materia materiaSeleccionada = (Materia) cbMateria.getSelectedItem();
+        alumnoSeleccionado.agregarMateria(materiaSeleccionada);
+        System.out.println("Total de materias inscritas: " + alumnoSeleccionado.getMateriasInscritas().size());
         alumnoSeleccionado.cantidadMaterias();
     }//GEN-LAST:event_jbInscribirActionPerformed
 
