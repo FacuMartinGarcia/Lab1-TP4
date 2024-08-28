@@ -59,7 +59,7 @@ public class Alumno {
      
     }
 
-    public HashSet<Materia> getMateriasInscritas() {
+    public HashSet<Materia> getMateriasInscriptas() {
         return materias;
     }
     
