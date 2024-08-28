@@ -123,8 +123,6 @@ private DefaultTableModel modeloA= new DefaultTableModel(){
     Alumno alumnoSeleccionado = (Alumno) cbAlumnos.getSelectedItem();
     if(alumnoSeleccionado != null){
         
-        // Sout para controlar que se este inscribiendo correctamente
-        System.out.println("Materias inscritas para " + alumnoSeleccionado.getNombre() + ":");
         for(Materia materia: alumnoSeleccionado.getMateriasInscritas()){
             modeloA.addRow(new Object[]{materia.getIdMateria(), materia.getNombre(),materia.getAnio()});
             
