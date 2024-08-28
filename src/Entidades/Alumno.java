@@ -3,6 +3,7 @@ package Entidades;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 import javax.swing.JOptionPane;
 
 public class Alumno {
@@ -11,6 +12,7 @@ public class Alumno {
     private String apellido;
     private String nombre;
     private HashSet<Materia> materias;
+//    private Set<Materia> materiasInscritas;
 
 
     public Alumno(int legajo, String apellido, String nombre) {
@@ -18,6 +20,7 @@ public class Alumno {
         this.apellido = apellido;
         this.nombre = nombre;
         this.materias= new HashSet<>();
+//        this.materiasInscritas= new HashSet<>();
 
     }
 
@@ -46,15 +49,17 @@ public class Alumno {
         this.nombre = nombre;
     }
 
-
-
     public void agregarMateria(Materia m) {
-        if (materias.contains(m)){
-        
-        }else{
+        if(m !=null){
             materias.add(m);
         }
     }
+
+//    public void agregarMateria(Materia m) {
+//        if(m !=null){
+//            materiasInscritas.add(m);
+//        }
+//    }
 
     public int cantidadMaterias() {
         System.out.println(this.apellido +" " +this.nombre + " - " + "Materias: "+materias.size());
@@ -62,6 +67,16 @@ public class Alumno {
      
     }
 
+    public HashSet<Materia> getMateriasInscritas() {
+        return materias;
+    }
+    
+    
+    
+//    public Set<Materia> getMateriasInscritas() {
+//        return materiasInscritas;
+//    }
+//    
     @Override
     public String toString() {
         return apellido + " " + nombre;

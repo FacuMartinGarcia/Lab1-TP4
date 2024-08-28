@@ -65,6 +65,7 @@ public class Colegio extends javax.swing.JFrame {
         jMenuAlumnos = new javax.swing.JMenuItem();
         jMenuMaterias = new javax.swing.JMenuItem();
         jMenuInscripcion = new javax.swing.JMenuItem();
+        jMenuListado = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -80,6 +81,11 @@ public class Colegio extends javax.swing.JFrame {
         );
 
         jMenu1.setText("Menú Principal");
+        jMenu1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu1ActionPerformed(evt);
+            }
+        });
 
         jMenuAlumnos.setText("Alumnos");
         jMenuAlumnos.addActionListener(new java.awt.event.ActionListener() {
@@ -104,6 +110,14 @@ public class Colegio extends javax.swing.JFrame {
             }
         });
         jMenu1.add(jMenuInscripcion);
+
+        jMenuListado.setText("Listado");
+        jMenuListado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuListadoActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuListado);
 
         jMenuBar1.add(jMenu1);
 
@@ -154,6 +168,19 @@ public class Colegio extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jMenuInscripcionActionPerformed
 
+    private void jMenu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu1ActionPerformed
+       
+    }//GEN-LAST:event_jMenu1ActionPerformed
+
+    private void jMenuListadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuListadoActionPerformed
+        escritorio.removeAll();
+        escritorio.repaint();
+        Listado list= new Listado();
+        list.setVisible(true);
+        escritorio.add(list);
+        escritorio.moveToFront(list);
+    }//GEN-LAST:event_jMenuListadoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -196,6 +223,7 @@ public class Colegio extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuAlumnos;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuInscripcion;
+    private javax.swing.JMenuItem jMenuListado;
     private javax.swing.JMenuItem jMenuMaterias;
     private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JPopupMenu jPopupMenu2;
